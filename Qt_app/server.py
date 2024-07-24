@@ -113,7 +113,8 @@ def sent_file(file_name, host, port):
             print('File send successfully!')
 
 
-schedule.every(1).minutes.do(checking_updates, sent_file(sent_file_name, HOST, PORT))
+sent_file(sent_file_name, HOST, PORT)
+schedule.every(1).minutes.do(checking_updates, print("OK"))
 if __name__ == "__main__":
     while True:
         schedule.run_pending()
